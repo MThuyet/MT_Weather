@@ -19,7 +19,7 @@ body {
   width: 100vw;
   height: 100vh;
   background: url('/src/assets/images/weather/Clear.jpg') center/cover no-repeat;
-  transition: all 1s ease-in-out;
+  transition: background 1s ease-in-out;
 }
 
 .weather-container {

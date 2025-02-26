@@ -117,11 +117,21 @@ const AppInfo = () => {
   }, [weather, unitTemp]);
 
   useEffect(() => {
-    if (!weather) return;
-    const mainWeather = weather.weather[0]?.main;
+    if (!weather || !weather.weather || !weather.weather[0]) return;
+    const mainWeather = weather.weather[0].main;
     if (body && mainWeather && mainWeather in weatherIconMain) {
-      body.style.background = `url('/assets/images/weather/${mainWeather}.jpg') center/cover no-repeat`;
-      setMainIcon(weatherIconMain[mainWeather as keyof typeof weatherIconMain]);
+      const img = new Image(); // Tạo đối tượng Image để preload
+      img.src = `/assets/images/weather/${mainWeather}.jpg`;
+      img.onload = () => {
+        // Chỉ set background khi ảnh đã tải xong
+        body.style.background = `url('${img.src}') center/cover no-repeat`;
+        setMainIcon(weatherIconMain[mainWeather as keyof typeof weatherIconMain]);
+      };
+      img.onerror = () => {
+        console.error(`Failed to load image: ${img.src}`);
+        // Fallback nếu ảnh không tải được
+        body.style.background = `url('/assets/images/weather/Clear.jpg') center/cover no-repeat`;
+      };
     }
   }, [weather]);
 
