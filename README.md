@@ -29,7 +29,7 @@
 
 ### Yêu cầu
 
-- Node.js (phiên bản 16 hoặc cao hơn)
+- Node.js phiên bản 20.14.0
 - npm hoặc yarn
 
 ## Cách chạy dự án
