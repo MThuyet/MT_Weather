@@ -41,7 +41,7 @@
 
 ## Demo
 
-[[https://mt_weather.vercel.app](https://mt_weather.vercel.app](https://mtweather.vercel.app/))]
+[https://mt_weather.vercel.app](https://mt_weather.vercel.app](https://mtweather.vercel.app/))]
 
 ## Tác giả
 
