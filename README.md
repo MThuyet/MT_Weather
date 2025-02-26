@@ -1,50 +1,55 @@
-# React + TypeScript + Vite
+# MT Weather
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ứng dụng thời tiết đơn giản sử dụng React, Vite và API OpenWeatherMap để tra cứu thông tin thời tiết theo thành phố.
 
-Currently, two official plugins are available:
+## Tính năng
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Tìm kiếm thời tiết theo tên thành phố.
+- Hiển thị thông tin chi tiết: nhiệt độ, độ ẩm, áp suất, tốc độ gió, bình minh, hoàng hôn, v.v.
+- Chuyển đổi đơn vị nhiệt độ giữa °C và °F.
+- Hỗ trợ đa ngôn ngữ: Tiếng Anh và Tiếng Việt (lưu ý: API không hỗ trợ tốt dữ liệu tiếng Việt).
+- Giao diện động với hình nền thay đổi theo thời tiết.
 
-## Expanding the ESLint configuration
+## Công nghệ sử dụng
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Frontend:** React, Vite, React Bootstrap, Lottie-react
+- **API:** OpenWeatherMap
+- **Quản lý trạng thái:** React Query (Tanstack Query)
+- **Đa ngôn ngữ:** react-i18next
+- **Deploy:** Vercel
 
-- Configure the top-level `parserOptions` property like this:
+## Kỹ năng thể hiện
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- Xây dựng giao diện responsive với React và Bootstrap.
+- Quản lý dữ liệu bất đồng bộ bằng React Query.
+- Tích hợp API bên thứ ba và xử lý biến môi trường.
+- Triển khai ứng dụng lên Vercel.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Cài đặt
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Yêu cầu
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Node.js (phiên bản 16 hoặc cao hơn)
+- npm hoặc yarn
+
+## Cách chạy dự án
+
+1. Clone repo: `git clone https://github.com/MThuyet/MT_Weather.git`
+2. Cài đặt: `npm install`
+3. Thêm file `.env` với `VITE_WEATHER_API_KEY` (từ [OpenWeatherMap](https://openweathermap.org/)).
+4. Chạy: `npm run dev` (mở `http://localhost:5173`).
+
+## Demo
+
+[https://mt_weather.vercel.app](https://mt_weather.vercel.app)
+
+## Tác giả
+
+- **Tên:** Mờ Thuyết
+- **GitHub:** [github.com/MThuyet](https://github.com/MThuyet)
+- **Email:** [mthuyet.ct@gmail.com](mailto:mthuyet.ct@gmail.com)
+- **Thời gian thực hiện:** Tháng 2/2025
+
+## Giấy phép
+
+Bản quyền thuộc về Mờ Thuyết © 2025. Mọi quyền được bảo lưu (All Rights Reserved).
