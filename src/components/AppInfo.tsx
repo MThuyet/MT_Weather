@@ -120,7 +120,7 @@ const AppInfo = () => {
     if (!weather) return;
     const mainWeather = weather.weather[0]?.main;
     if (body && mainWeather && mainWeather in weatherIconMain) {
-      body.style.background = `url('/src/assets/images/weather/${mainWeather}.jpg') center/cover no-repeat`;
+      body.style.background = `url('/assets/images/weather/${mainWeather}.jpg') center/cover no-repeat`;
       setMainIcon(weatherIconMain[mainWeather as keyof typeof weatherIconMain]);
     }
     return () => {
