@@ -123,9 +123,6 @@ const AppInfo = () => {
       body.style.background = `url('/assets/images/weather/${mainWeather}.jpg') center/cover no-repeat`;
       setMainIcon(weatherIconMain[mainWeather as keyof typeof weatherIconMain]);
     }
-    return () => {
-      if (body) body.style.background = '';
-    };
   }, [weather]);
 
   const handleChangeTemp = () => {
